@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="student"
+            type="teo.android.databindingbasicwithdataclass.dataclass.Student" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:hint="Tuan"
+            android:text="@={student.name}"
+            android:layout_marginTop="100dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/txtAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtName"
+            android:layout_centerHorizontal="true"
+            android:textSize="30dp"
+            android:hint="20"
+            android:text="@{Integer.toString(student.age)}"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/txtCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Viet Nam"
+            android:textSize="30dp"
+            android:layout_marginTop="10dp"
+            android:text="@={student.country}"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/txtAge"/>
+
+        <EditText
+            android:id="@+id/edtInputName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="name"
+            android:layout_below="@+id/txtCountry"/>
+
+        <EditText
+            android:id="@+id/edtInputAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="12"
+            android:layout_below="@+id/edtInputName"/>
+
+        <EditText
+            android:id="@+id/edtInputCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtInputAge"
+            android:hint="Viet Nam"/>
+
+        <Button
+            android:id="@+id/btnShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/edtInputCountry"/>
+
+    </RelativeLayout>
+
+</layout>
